@@ -88,7 +88,9 @@ class StoryList {
         }
       },
     });
-    return new Story(response.data.story)
+    const newest_story = new Story(response.data.story)
+    user.ownStories.push(newest_story)
+    return newest_story
   }
 
   // remove story from API
